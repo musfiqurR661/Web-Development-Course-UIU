@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If-Else and Reverse Example</title>
+</head>
+
+<body>
+    <h2>Results:</h2>
+    <p id="output"></p> <!-- Placeholder for output -->
+
+    <script>
+        // number reversal function
+        function reverseNumber(num) {
+            let reversed = 0;
+            while (num > 0) {
+                let digit = num % 10;
+                reversed = reversed * 10 + digit;
+                num = Math.floor(num / 10);
+            }
+            return reversed;
+        }
+
+        // string reversal function
+        function reverseString(str) {
+            let reversed = '';
+            for (let i = str.length - 1; i >= 0; i--) {
+                reversed += str[i];
+            }
+            return reversed;
+        }
+
+        // Example usage
+        let number = 12345;
+        let reversedNumber = reverseNumber(number);
+
+        let str = "54321";
+        let reversedString = reverseString(str);
+
+        // Display on page
+        document.getElementById("output").innerHTML =
+            "Reversed Number: " + reversedNumber + "<br>" +
+            "Reversed String: " + reversedString;
+    </script>
+</body>
+
+</html>
